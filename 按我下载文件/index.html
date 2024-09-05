@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        #videoContainer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #playButton {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="videoContainer">
+        <video id="myVideo" width="640" height="360" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="playButton">播放神秘视频</button>
+    </div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const playButton = document.getElementById('playButton');
+
+        playButton.addEventListener('click', function() {
+            video.play();
+            video.addEventListener('ended', function() {
+                alert('你居然在看这个？');
+            });
+        });
+    </script>
+</body>
+</html>
